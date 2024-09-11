@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./router/userRoutes");
-
+const userRoutes = require("./router/router");
 const app = express();
 app.use(express.json());
 
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 // Use the user routes for all requests starting with /users
 app.use("/users", userRoutes);
-
+app.use("/users", userRoutes);
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
